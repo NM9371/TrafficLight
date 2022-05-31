@@ -12,18 +12,39 @@ const timeYellow = 3;
 var timeGreen = 15;
 const fullTime = timeRed+timeYellow+timeGreen;
 var second = 0;
+var isRed=true;
 
-setInterval(() => {activity();},1000);
-function changeHuman () {
+setInterval(() => {activity();},100);
+
+function toggleGreen () {
+    isRed=!isRed;
     human.forEach((h) => {h.classList.toggle("visible");});
-}
+    timerSquare.classList.toggle("green");
+};
 
 function activity () {
-    second=second+1;
-    if (second %2 == 0) {
-        greenCircle.classList.toggle("active");
-        changeHuman();
-    } else {
-        redCircle.classList.toggle("active");
+    if(isRed) {
+    timerSquare.textContent=(timeRed+timeYellow-second);
+    }else{
+    timerSquare.textContent=(fullTime-second);
+    }
+    switch (second++) {
+        case timeRed:
+            yellowCircle.classList.toggle("active");
+            break;
+        case timeRed+timeYellow:
+            yellowCircle.classList.toggle("active");
+            greenCircle.classList.toggle("active");
+            toggleGreen();
+
+        case 0:
+            redCircle.classList.toggle("active");
+            break;
+
+        case fullTime:
+            greenCircle.classList.toggle("active");
+            toggleGreen();
+            second=0;
+            break;
     }
 }

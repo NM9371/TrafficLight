@@ -50,4 +50,9 @@
 }
 
 .visible {visibility: visible}
-.active {filter: brightness(1);}
+.active {filter: brightness(1)}
+
+.green {
+    color: green !important;
+    border-color:green !important;
+}
