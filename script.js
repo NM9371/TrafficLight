@@ -1,5 +1,3 @@
-//window.addEventListener('DOMContentLoaded', async () => {
-
 const human = document.querySelectorAll(".human");
 const stay = document.querySelector("#stay");
 const go = document.querySelector("#go");
@@ -7,14 +5,14 @@ const redCircle = document.querySelector("#redCircle");
 const yellowCircle = document.querySelector("#yellowCircle");
 const greenCircle = document.querySelector("#greenCircle");
 const timerSquare = document.querySelector("#timerSquare");
-var timeRed = 15;
+var timeRed = 10;
 const timeYellow = 3;
-var timeGreen = 15;
+var timeGreen = 8;
 const fullTime = timeRed+timeYellow+timeGreen;
 var second = 0;
 var isRed=true;
 
-setInterval(() => {activity();},100);
+setInterval(() => {activity();},1000);
 
 function toggleGreen () {
     isRed=!isRed;
