@@ -2,10 +2,40 @@
     background: black; 
     width: 100px; 
     height: 250px; 
-    margin-left: auto; 
-    margin-right: auto;
-    margin-top: 10px;
+    margin: 10px auto;
     overflow: hidden;
+}
+
+.settings {
+    width: 100px; 
+    height: 150px;
+    border: 3px solid black;
+    border-radius: 5px;
+    margin: auto;
+    justify-items: center;
+    display: grid;
+}
+
+.settings input {
+    border-radius: 20px;
+    width: 70px;
+    border-width: 0;
+    margin: auto;
+    text-align: center;
+}
+
+#settingsButton {
+    border-radius: 20px;
+    width: 70px;
+    margin: auto;
+}
+
+#greenInput {
+    background-color: rgb(63, 199, 63);
+}
+
+#redInput {
+    background-color: rgb(238, 38, 38);
 }
 
 .circle {
@@ -14,11 +44,9 @@
     -webkit-border-radius: 25px;
     -moz-border-radius: 25px;
     border-radius: 25px;
-    margin-left: auto;
-    margin-right: auto;
     border: 2px solid white;
     display: flex;
-    margin-top: 20px;
+    margin: 20px auto auto;
     filter: brightness(0.5);
 }
 
@@ -65,4 +93,4 @@
     0% { filter: brightness(1); }
     50% { filter: brightness(0.5); }
     100% { filter: brightness(1); }
-   }
+}
