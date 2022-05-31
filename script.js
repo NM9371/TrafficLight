@@ -19,29 +19,32 @@ function toggleGreen () {
 }
 
 function activity () {
-    if(isRed) {
-    timerSquare.textContent=(timeRed+timeYellow-second);
-    }else{
-    timerSquare.textContent=(fullTime-second);
-    }
     switch (second++) {
-        case timeRed:
+        case timeRed: //включение желтого после красного
             yellowCircle.classList.toggle("active");
             break;
-        case timeRed+timeYellow:
+        case timeRed+timeYellow: //включение зеленого
             yellowCircle.classList.toggle("active");
             greenCircle.classList.toggle("active");
             toggleGreen();
 
-        case 0:
+        case 0: //включение/выключение красного
             redCircle.classList.toggle("active");
             break;
 
-        case fullTime:
+        case fullTime: //выключение зеленого
             greenCircle.classList.toggle("active");
             toggleGreen();
             second=0;
+        case fullTime-3: //мигание зеленого
+            greenCircle.classList.toggle("blink");
+            go.classList.toggle("blink");
             break;
+    }
+    if(isRed) {
+        timerSquare.textContent=(timeRed+timeYellow-second);
+    }else{
+        timerSquare.textContent=(fullTime-second);
     }
 }
 

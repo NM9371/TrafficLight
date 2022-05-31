@@ -56,3 +56,13 @@
     color: green !important;
     border-color:green !important;
 }
+
+.blink {	
+    animation: blink 1s;
+    animation-iteration-count: infinite;
+}
+@keyframes blink {
+    0% { filter: brightness(1); }
+    50% { filter: brightness(0.5); }
+    100% { filter: brightness(1); }
+   }
