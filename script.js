@@ -21,7 +21,7 @@ function toggleGreen () {
 };
 
 function activity () {
-    if(isRed) {
+    if(!isRed) {
     timerSquare.textContent=(timeRed+timeYellow-second);
     }else{
     timerSquare.textContent=(fullTime-second);
