@@ -16,7 +16,7 @@ function toggleGreen () {
     isRed=!isRed;
     human.forEach((h) => {h.classList.toggle("visible");});
     timerSquare.classList.toggle("green");
-};
+}
 
 function activity () {
     if(isRed) {
