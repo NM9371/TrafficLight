@@ -12,8 +12,6 @@ const fullTime = timeRed+timeYellow+timeGreen;
 var second = 0;
 var isRed=true;
 
-setInterval(() => {activity();},1000);
-
 function toggleGreen () {
     isRed=!isRed;
     human.forEach((h) => {h.classList.toggle("visible");});
@@ -21,7 +19,7 @@ function toggleGreen () {
 };
 
 function activity () {
-    if(!isRed) {
+    if(isRed) {
     timerSquare.textContent=(timeRed+timeYellow-second);
     }else{
     timerSquare.textContent=(fullTime-second);
@@ -46,3 +44,5 @@ function activity () {
             break;
     }
 }
+
+setInterval(() => {activity();},1000);
