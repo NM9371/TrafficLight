@@ -24,10 +24,9 @@
 
 #timerSquare {
     position: relative;
-    margin: 10px;
-    top: -40px;
-    padding-top: 25px;
-    padding-bottom: 25px;
+    margin: 0 10px;
+    top: -30px;
+    padding: 25px 0;
     line-height: 0px;
     border: 3px solid red;
     border-radius: 5px;
@@ -46,8 +45,9 @@
     margin-left: -50px;
 }
 
-#walk {
+#go {
     margin-left: -53px;
 }
 
 .visible {visibility: visible}
+.active {filter: brightness(1);}
