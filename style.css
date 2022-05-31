@@ -19,18 +19,21 @@
     border: 2px solid white;
     display: flex;
     margin-top: 20px;
+    filter: brightness(0.5);
 }
 
 #timerSquare {
     position: relative;
     margin: 10px;
     top: -40px;
-    padding: 25px;
+    padding-top: 25px;
+    padding-bottom: 25px;
     line-height: 0px;
     border: 3px solid red;
     border-radius: 5px;
     color: red;
     font-size: 300%;
+    text-align: center;
 }
 
 .human {
