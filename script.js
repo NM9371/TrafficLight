@@ -9,10 +9,10 @@ const timerSquare = document.querySelector("#timerSquare");
 const redInput = document.querySelector("#redInput");
 const greenInput = document.querySelector("#greenInput");
 const settingsButton = document.querySelector("#settingsButton");
-var timeRed = 10;
+var timeRed = 13;
 const timeYellow = 3;
 var timeGreen = 8;
-var fullTime = timeRed+timeYellow+timeGreen;
+var fullTime = timeRed+timeGreen;
 var second = 0;
 var isRed=true;
 var intervalID = 0;
@@ -27,9 +27,9 @@ Number.prototype.between = function(a, b) {
 
 settingsButton.addEventListener('click', () => {
     if ((+redInput.value).between(4,999) && (+greenInput.value).between(4,999)) {
-        timeRed=+redInput.value;
+        timeRed=+redInput.value+timeYellow;
         timeGreen=+greenInput.value;
-        fullTime = timeRed+timeYellow+timeGreen;
+        fullTime = timeRed+timeGreen;
         second=0;
         circle.forEach((c) => {c.classList.remove("active");});
 
@@ -52,11 +52,11 @@ function toggleGreen () {
 
 function activity () {
     switch (second++) {
-        case timeRed: //включение желтого после красного
+        case timeRed-timeYellow: //включение желтого после красного
             yellowCircle.classList.toggle("active");
             break;
 
-        case timeRed+timeYellow: //включение зеленого
+        case timeRed: //включение зеленого
             yellowCircle.classList.toggle("active");
             greenCircle.classList.toggle("active");
             toggleGreen();
@@ -75,7 +75,7 @@ function activity () {
     }
 
     if(isRed) {
-        timerSquare.textContent=(timeRed+timeYellow-second);
+        timerSquare.textContent=(timeRed-second);
     }else{
         timerSquare.textContent=(fullTime-second);
     }
