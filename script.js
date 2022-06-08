@@ -9,18 +9,18 @@ const timerSquare = document.querySelector("#timerSquare");
 const redInput = document.querySelector("#redInput");
 const greenInput = document.querySelector("#greenInput");
 const settingsButton = document.querySelector("#settingsButton");
-var timeRed = 13;
+let timeRed = 13;
 const timeYellow = 3;
-var timeGreen = 8;
-var fullTime = timeRed+timeGreen;
-var second = 0;
-var isRed=true;
-var intervalID = 0;
+let timeGreen = 8;
+let fullTime = timeRed+timeGreen;
+let second = 0;
+let isRed=true;
+let intervalID = 0;
 
 //объект для проверки того что переменная находится между заданными числами 
 //(или является одним из них)
 Number.prototype.between = function(a, b) {
-    var min = Math.min.apply(Math, [a, b]),
+    let min = Math.min.apply(Math, [a, b]),
         max = Math.max.apply(Math, [a, b]);
     return this >= min && this <= max;
 };
